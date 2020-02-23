@@ -84,6 +84,7 @@ namespace CandyShop.Models
                 (ShoppingCartItems =
                 _appDbContext.ShoppingCartItems.Where(c => c.ShoppingCartId == ShoppingCartId)
                                                .Include(s => s.Candy)
+                                               .OrderBy(x=>x.Candy.Name)
                                                .ToList());
         }
 
